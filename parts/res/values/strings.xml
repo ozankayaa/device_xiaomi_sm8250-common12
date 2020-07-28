@@ -47,4 +47,7 @@
     <!-- Refresh Rate tile -->
     <string name="refresh_rate_tile_title">Refresh Rate</string>
 
+    <!-- Thermal Profiles tile -->
+    <string name="thermal_tile_title">Thermal Profiles</string>
+
 </resources>
