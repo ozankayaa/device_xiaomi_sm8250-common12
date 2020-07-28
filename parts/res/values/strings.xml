@@ -7,7 +7,7 @@
   <string name="htsr_enable_title">Increase Touch Responsiveness</string>
   <string name="htsr_enable_summary">Increases touch polling rate to decrease latency</string>
 
-	
+
 <!--  DT2W    -->
     <string name="dt2w_enable_title">Double-Tap to Wake </string>
     <string name="dt2w_enable_summary">Display wake up from doze by a double-tap</string>
@@ -43,6 +43,9 @@
     <string name="touch_resistant_title">Touch-resistant area</string>
     <string name="touch_resistant_summary">Reduce touch sensitivity near the edges to avoid triggering touch controls</string>
 
-        <!-- Refresh Rate tile -->
-    <string name="refresh_rate_tile_title">Refresh Rate</string>
+    <!-- Refresh Rate tile -->
+   <string name="refresh_rate_tile_title">Refresh Rate</string>
+    <!-- Thermal Profiles tile -->
+    <string name="thermal_tile_title">Thermal Profiles</string>
+
 </resources>
