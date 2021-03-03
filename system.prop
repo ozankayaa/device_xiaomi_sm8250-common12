@@ -60,6 +60,9 @@ ro.telephony.default_network=33,22
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 
+# IORap
+ro.iorapd.enable=true
+
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
 
