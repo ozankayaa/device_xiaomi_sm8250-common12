@@ -135,6 +135,7 @@ vendor.voice.path.for.pcm.voip=true
 # Camera
 persist.vendor.camera.eis.enable=1
 persist.camera.facepp.fdenable=0
+persist.vendor.camera.logInfoMask=false
 
 # Crypto
 ro.crypto.allow_encrypt_override=true
