@@ -241,9 +241,7 @@ PRODUCT_PACKAGES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.kona \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service
+    android.hardware.lights-service.xiaomi_kona
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
