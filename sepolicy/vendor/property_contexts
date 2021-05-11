@@ -73,3 +73,6 @@ ro.vendor.touchfeature.type                     u:object_r:vendor_touchfeature_p
 
 # USB
 sys.usb.configfs                                u:object_r:usb_control_prop:s0
+
+# WiFi Display
+persist.vendor.setWFDInfo.                      u:object_r:vendor_wfd_vendor_debug_prop:s0
