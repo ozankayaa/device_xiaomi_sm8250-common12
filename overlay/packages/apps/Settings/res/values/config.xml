@@ -2,4 +2,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
      <!-- Whether to show Battery Health in Settings Option -->
      <bool name="config_supportBatteryHealth">true</bool>
+
+     <!-- Min-Max refresh rate controls-->
+     <bool name="config_show_refresh_rate_controls">true</bool>
 </resources>
