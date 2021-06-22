@@ -111,6 +111,9 @@ on post-fs-data
     mkdir /data/vendor/mqsas_common 0771 system system
     mkdir /data/vendor/thermal 0771 root system
     mkdir /data/vendor/thermal/config 0771 root system
+    # Allow system to read measured_fps
+    chown system graphics /sys/class/drm/sde-crtc-0/measured_fps
+    chmod 0444 /sys/class/drm/sde-crtc-0/measured_fps
 
 on boot
     start vendor.sensors
