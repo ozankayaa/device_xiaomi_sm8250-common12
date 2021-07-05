@@ -104,6 +104,9 @@ TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8250
 TARGET_KERNEL_CLANG_VERSION := azure
 TARGET_KERNEL_ADDITIONAL_FLAGS += HOSTCFLAGS="-fuse-ld=lld -Wno-unused-command-line-argument" AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip LD=ld.lld
 
+# NFC
+TARGET_USES_NQ_NFC := true
+
 # Partitions
 ifeq ($(PRODUCT_VIRTUAL_AB_OTA),true)
 BOARD_BOOTIMAGE_PARTITION_SIZE := 201326592
