@@ -291,3 +291,7 @@ vendor.usb.use_ffs_mtp=0
 
 # WiFi
 wifi.aware.interface=wifi-aware0
+
+# IORap
+iorapd.perfetto.enable=true
+iorapd.readahead.enable=true
