@@ -1,4 +1,4 @@
-# All unpinned blobs below are extracted from APOLLOGlobal V12.5.1.0.RJDMIXM
+# All unpinned blobs below are extracted from APOLLO V12.5.2.0.RJDCNXM
 
 # ADSP
 vendor/bin/adsprpcd
