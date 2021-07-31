@@ -280,3 +280,7 @@ service leds-sh /system/vendor/bin/sh /vendor/etc/init.leds.sh
 
 on property:vendor.dcvs.prop=1
    start dcvs-sh
+
+# initialize powerHAL when boot is completed
+on property:sys.boot_completed=1
+    setprop vendor.powerhal.init 1
