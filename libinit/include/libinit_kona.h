@@ -18,7 +18,6 @@ typedef struct variant_info {
     std::string device;
     std::string marketname;
     std::string model;
-    std::string build_description;
     std::string build_fingerprint;
 
     bool nfc;
@@ -29,5 +28,7 @@ void set_variant_props(const variant_info_t variant);
 
 void property_override(std::string prop, std::string value, bool add = true);
 void set_ro_build_prop(const std::string &prop, const std::string &value, bool product = false);
+
+std::string fingerprint_to_description(std::string fingerprint);
 
 #endif // LIBINIT_KONA_H
