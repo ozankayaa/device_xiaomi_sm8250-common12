@@ -50,27 +50,6 @@ on init
     chown system system /sys/class/leds/white/brightness
     chown system system /sys/class/leds/white/breath
 
-   # Setup permission for Power HAL
-    chown system system /dev/stune/top-app/schedtune.boost
-    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
-    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-    chown system system /sys/class/kgsl/kgsl-3d0/force_rail_on
-    chown system system /sys/class/kgsl/kgsl-3d0/force_clk_on
-    chown system system /sys/class/kgsl/kgsl-3d0/idle_timer
-    chown system system /sys/class/kgsl/kgsl-3d0/max_pwrlevel
-    chown system system /sys/class/kgsl/kgsl-3d0/min_pwrlevel
-    chown system system /dev/cpu_dma_latency
-
-    chmod 0664 /dev/stune/top-app/schedtune.boost
-    chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/min_freq
-    chmod 0664 /sys/class/kgsl/kgsl-3d0/devfreq/max_freq
-    chmod 0664 /sys/class/kgsl/kgsl-3d0/force_rail_on
-    chmod 0664 /sys/class/kgsl/kgsl-3d0/force_clk_on
-    chmod 0664 /sys/class/kgsl/kgsl-3d0/max_pwrlevel
-    chmod 0664 /sys/class/kgsl/kgsl-3d0/min_pwrlevel
-    chmod 0664 /sys/class/kgsl/kgsl-3d0/idle_timer
-    chmod 0664 /dev/cpu_dma_latency
-
 on early-fs
     start vold
 
@@ -301,7 +280,3 @@ service leds-sh /system/vendor/bin/sh /vendor/etc/init.leds.sh
 
 on property:vendor.dcvs.prop=1
    start dcvs-sh
-
-# initialize powerHAL when boot is completed
-on property:sys.boot_completed=1
-    setprop vendor.powerhal.init 1
