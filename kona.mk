@@ -287,6 +287,7 @@ PRODUCT_PACKAGES += \
 
 # Media
 PRODUCT_PACKAGES += \
+    android.hardware.media.c2@1.0.vendor \
     libavservices_minijail \
     libavservices_minijail.vendor \
     libavservices_minijail_vendor
@@ -416,6 +417,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service \
+    android.frameworks.sensorservice@1.0.vendor \
     libsensorndkbridge
 
 # Soong namespaces
@@ -468,6 +470,7 @@ PRODUCT_EXTRA_VNDK_VERSIONS := 28 29 30
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
+    android.hardware.wifi@1.5.vendor \
     hostapd \
     libwpa_client \
     libwifi-hal-ctrl \
