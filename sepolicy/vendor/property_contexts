@@ -59,9 +59,6 @@ vendor.powerhal.rendering                       u:object_r:power_prop:s0
 # Mlipay
 persist.vendor.sys.pay                          u:object_r:vendor_tee_listener_prop:s0
 
-# Recovery
-ro.build.expect.                                u:object_r:exported_default_prop:s0
-
 # RIL
 ro.vendor.ril                                   u:object_r:vendor_public_vendor_default_prop:s0
 
@@ -70,3 +67,6 @@ vendor.sys.thermal.                             u:object_r:thermal_normal_prop:s
 
 # Touchfeature
 ro.vendor.touchfeature.type              u:object_r:vendor_touchfeature_prop:s0
+
+# USB
+sys.usb.configfs                                u:object_r:usb_control_prop:s0
