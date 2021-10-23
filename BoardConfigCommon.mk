@@ -6,7 +6,7 @@
 
 COMMON_PATH := device/xiaomi/sm8250-common
 
-SELINUX_IGNORE_NEVERALLOWS := false
+
 
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
