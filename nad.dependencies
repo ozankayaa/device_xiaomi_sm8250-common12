@@ -4,9 +4,7 @@
     "target_path": "vendor/xiaomi/sm8250-common"
   },
   {
-    "remote": "github",
-    "repository":  "ThunderkeX/vendor_xiaomi_sm8250-common-extra",
-    "target_path": "vendor/xiaomi/sm8250-common-extra",
-    "branch": "12"
+    "repository":  "vendor_xiaomi_sm8250-common-extra",
+    "target_path": "vendor/xiaomi/sm8250-common-extra"
   }
 ]
