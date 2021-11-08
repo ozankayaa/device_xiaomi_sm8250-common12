@@ -58,6 +58,7 @@ BiometricsFingerprint *BiometricsFingerprint::sInstance = nullptr;
 
 #define FOD_UI_PATH "/sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui"
 
+#ifdef FOD
 static bool readBool(int fd) {
     char c;
     int rc;
@@ -76,6 +77,7 @@ static bool readBool(int fd) {
 
     return c != '0';
 }
+#endif
 
 BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevice(nullptr) {
     sInstance = this; // keep track of the most recent instance
@@ -88,6 +90,7 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
             break;
         }
     }
+#ifdef FOD
     mFod = GetBoolProperty("vendor.lineage.fod.enable", false);
 
     if (mFod) {
@@ -115,6 +118,7 @@ BiometricsFingerprint::BiometricsFingerprint() : mClientCallback(nullptr), mDevi
             }
         }).detach();
     }
+#endif
 }
 
 BiometricsFingerprint::~BiometricsFingerprint() {
