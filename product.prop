@@ -1,3 +1,7 @@
 # IORap
 iorapd.readahead.enable=true
 
+# Graphics
+debug.hwui.renderer=skiagl
+debug.renderengine.backend=skiaglthreaded
+renderthread.skia.reduceopstasksplitting=true
