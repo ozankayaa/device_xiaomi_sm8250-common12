@@ -3,6 +3,7 @@ type vendor_displayfeature_prop, property_type;
 
 # Fingerprint
 type vendor_fp_prop, property_type;
+type vendor_fod_prop, property_type;
 
 # Init
 type vendor_device_prop, property_type;
