@@ -253,6 +253,9 @@ vendor.power.pasr.enabled=false
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.perf.scroll_opt=true
 
+# Printk
+persist.vendor.console.silent.config=1
+
 # Radio
 persist.radio.multisim.config=dsds
 persist.radio.snapshot_enabled=0
