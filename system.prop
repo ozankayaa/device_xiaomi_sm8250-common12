@@ -90,3 +90,7 @@ ro.config.sdha_apps_bg_min=8
 
 # Disable blur on app launch
 ro.launcher.blur.appLaunch=0
+
+#Disable Blur
+ro.surface_flinger.supports_background_blur=0
+ro.sf.blurs_are_expensive=0
