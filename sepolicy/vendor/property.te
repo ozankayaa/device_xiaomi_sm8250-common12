@@ -11,7 +11,7 @@ type vendor_device_prop, property_type;
 type power_prop, property_type;
 
 # Thermal
-type thermal_normal_prop, property_type;
+type vendor_thermal_normal_prop, property_type;
 
 # Touchfeature
 type vendor_touchfeature_prop, property_type;
