@@ -387,6 +387,4 @@
     <!-- Delay that allows some content to arrive at the display before switching
          from DOZE to ON, in millis. -->
     <integer name="config_wakeUpDelayDoze">32</integer>
-
->>>>>>> 4d3fcf6 (sm8250-common: overlay: Fix fingerprint wake-up animation)
 </resources>
