@@ -411,8 +411,12 @@
 
     <!-- Whether the display blanks itself when transition from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">false</bool>
-    
+
         <!-- Exempt ImsService from privacy (location) indicators -->
     <string name="config_systemAudioIntelligence" translatable="false">org.codeaurora.ims</string>
+
+    <!-- Whether to allow process with media UID to access CameraServiceProxy -->
+    <bool name="config_allowMediaUidForCameraServiceProxy">true</bool>
+
 
 </resources>
