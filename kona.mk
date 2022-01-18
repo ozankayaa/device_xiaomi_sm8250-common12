@@ -534,5 +534,10 @@ PRODUCT_CFI_INCLUDE_PATHS += \
 PRODUCT_PACKAGES += \
 		XiaomiParts
 
+
+	# APN
+PRODUCT_COPY_FILES += \
+		$(LOCAL_PATH)/configs/etc/apns-conf.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/apns-conf.xml
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/sm8250-common/sm8250-common-vendor.mk)

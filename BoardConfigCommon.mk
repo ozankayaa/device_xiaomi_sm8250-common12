@@ -69,7 +69,6 @@ TARGET_USES_GRALLOC1 := true
 TARGET_USES_GRALLOC4 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
-TARGET_USES_VULKAN := true
 
 # DRM
 TARGET_ENABLE_MEDIADRM_64 := true
@@ -234,6 +233,8 @@ WIFI_DRIVER_STATE_ON := "ON"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+
+CONFIG_ACS := true
 
 # Inherit the proprietary files
 include vendor/xiaomi/sm8250-common/BoardConfigVendor.mk

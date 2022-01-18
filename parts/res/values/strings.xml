@@ -5,7 +5,7 @@
   <string name="htsr_enable_title">Increase Touch Responsiveness</string>
   <string name="htsr_enable_summary">Increases touch polling rate to decrease latency</string>
 
-
+	
 <!--  DT2W    -->
     <string name="dt2w_enable_title">Double-Tap to Wake </string>
     <string name="dt2w_enable_summary">Display wake up from doze by a double-tap</string>
@@ -33,7 +33,7 @@
     <!-- Touch Control Settings -->
     <string name="touch_control_title">Touch Control</string>
     <string name="touch_game_mode_title">Enable game mode</string>
-    <string name="touch_game_mode_summary">Increases touch sampling rate to 180Hz</string>
+    <string name="touch_game_mode_summary">Increases touch sampling rate to 240Hz</string>
     <string name="touch_response_title">Touch response</string>
     <string name="touch_response_summary">Controls touch response</string>
     <string name="touch_sensitivity_title">Touch sensitivity</string>

@@ -92,7 +92,7 @@ public class ThermalService extends Service {
                     return;
                 }
 
-                String foregroundApp = info.topActivity.getPackageName();
+               String foregroundApp = info.topActivity.getPackageName();
                 if (!foregroundApp.equals(mPreviousApp)) {
                     mThermalUtils.setThermalProfile(foregroundApp);
                     mPreviousApp = foregroundApp;
