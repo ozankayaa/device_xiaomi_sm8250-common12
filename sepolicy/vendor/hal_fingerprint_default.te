@@ -36,5 +36,10 @@ get_prop(hal_fingerprint_default, vendor_displayfeature_prop);
 
 set_prop(hal_fingerprint_default, vendor_fp_prop)
 
+allow hal_fingerprint_default vendor_hal_perf_hwservice:hwservice_manager { find };
+
 allow hal_fingerprint_default vendor_sysfs_spss:dir { search };
 allow hal_fingerprint_default vendor_sysfs_spss:file { open read };
+
+# Allow binder communication with vendor_hal_perf_default
+binder_call(hal_fingerprint_default, vendor_hal_perf_default)
