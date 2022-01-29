@@ -7,8 +7,6 @@
 COMMON_PATH := device/xiaomi/sm8250-common
 
 
-#Broken_rules
-BUILD_BROKEN_DUP_SYSPROP := true
 
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
