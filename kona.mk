@@ -335,6 +335,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service-sdm
 
+# LibXML2
+PRODUCT_PACKAGES += \
+    libxml2 \
+    libxml2.vendor
+
 # Media
 PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.0.vendor \
