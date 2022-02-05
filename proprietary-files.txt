@@ -128,10 +128,10 @@ vendor/lib64/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 # Consumer IR
 vendor/lib64/hw/consumerir.default.so
 
-# Display (HDR)
+# Display (HDR) - from APOLLO DEV
 vendor/lib64/libhdr_tm.so
 
-# Display (SDM)
+# Display (SDM) - from APOLLO DEV
 vendor/lib64/libdisplayqos.so
 vendor/lib64/libdisplayskuutils.so
 vendor/lib64/libgame_enhance.so
@@ -145,7 +145,7 @@ vendor/lib64/libsdm-disp-vndapis.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
 
-# Display postprocessing
+# Display postprocessing - from APOLLO DEV
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/ppd
 vendor/etc/init/vendor.display.color@1.0-service.rc
@@ -946,7 +946,7 @@ vendor/bin/cnss-daemon
 vendor/etc/wifi/aoa_cldb_falcon.bin
 vendor/etc/wifi/aoa_cldb_swl14.bin
 
-# WiFi Display
+# WiFi Display - from APOLLO DEV
 system_ext/bin/wfdservice
 system_ext/etc/init/wfdservice.rc
 system_ext/etc/permissions/wfd-system-ext-privapp-permissions-qti.xml
