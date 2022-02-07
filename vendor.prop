@@ -274,6 +274,13 @@ sys.vendor.shutdown.waittime=500
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=SM8250
 
+#property for doubletap set by touchfeature
+#bit 0 for doubletap set by touchfeature
+#bit 1 for direction send in normal mode
+#bit 2 for edge grip by 12 rect
+#bit 3 represents set touch driver debug level by system
+ro.vendor.touchfeature.type=2
+
 # USB
 vendor.usb.diag.func.name=diag
 vendor.usb.use_ffs_mtp=0
