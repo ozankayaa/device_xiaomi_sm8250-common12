@@ -22,6 +22,7 @@ import android.app.ActivityTaskManager.RootTaskInfo;
 import android.app.IActivityTaskManager;
 import android.app.TaskStackListener;
 import android.app.Service;
+import android.app.TaskStackListener;
 import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
@@ -76,6 +77,12 @@ public class ThermalService extends Service {
         return null;
     }
 
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        mThermalUtils.updateTouchRotation();
+    }
+
     private void registerReceiver() {
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_SCREEN_OFF);
@@ -92,7 +99,7 @@ public class ThermalService extends Service {
                     return;
                 }
 
-               String foregroundApp = info.topActivity.getPackageName();
+                String foregroundApp = info.topActivity.getPackageName();
                 if (!foregroundApp.equals(mPreviousApp)) {
                     mThermalUtils.setThermalProfile(foregroundApp);
                     mPreviousApp = foregroundApp;

@@ -30,32 +30,42 @@ import androidx.preference.PreferenceManager;
 
 import org.lineageos.settings.utils.FileUtils;
 
-public final class ThermalUtils {
+import java.util.NoSuchElementException;
 
-    private static final String THERMAL_CONTROL = "thermal_control";
+import vendor.xiaomi.hardware.touchfeature.V1_0.ITouchFeature;
+
+public final class ThermalUtils {
 
     protected static final int STATE_DEFAULT = 0;
     protected static final int STATE_BENCHMARK = 1;
-    protected static final int STATE_CAMERA = 2;
-    protected static final int STATE_DIALER = 3;
-    protected static final int STATE_GAMING = 4;
-
+    protected static final int STATE_BROWSER = 2;
+    protected static final int STATE_CAMERA = 3;
+    protected static final int STATE_DIALER = 4;
+    protected static final int STATE_GAMING = 5;
+    protected static final int STATE_STREAMING = 6;
+    private static final String THERMAL_CONTROL = "thermal_control";
     private static final String THERMAL_STATE_DEFAULT = "0";
     private static final String THERMAL_STATE_BENCHMARK = "10";
+    private static final String THERMAL_STATE_BROWSER = "11";
     private static final String THERMAL_STATE_CAMERA = "12";
     private static final String THERMAL_STATE_DIALER = "8";
-    private static final String THERMAL_STATE_GAMING = "13";
+    private static final String THERMAL_STATE_GAMING = "9";
+    private static final String THERMAL_STATE_STREAMING = "14";
 
     private static final String THERMAL_BENCHMARK = "thermal.benchmark=";
+    private static final String THERMAL_BROWSER = "thermal.browser=";
     private static final String THERMAL_CAMERA = "thermal.camera=";
     private static final String THERMAL_DIALER = "thermal.dialer=";
     private static final String THERMAL_GAMING = "thermal.gaming=";
+    private static final String THERMAL_STREAMING = "thermal.streaming=";
 
     private static final String THERMAL_SCONFIG = "/sys/class/thermal/thermal_message/sconfig";
+    private static final String PROP_GAME_MODE = "sys.performance.level";
 
     private boolean mTouchModeChanged;
 
     private Display mDisplay;
+    private ITouchFeature mTouchFeature = null;
     private SharedPreferences mSharedPrefs;
 
     protected ThermalUtils(Context context) {
@@ -63,11 +73,22 @@ public final class ThermalUtils {
 
         WindowManager mWindowManager = context.getSystemService(WindowManager.class);
         mDisplay = mWindowManager.getDefaultDisplay();
+
+        try {
+            mTouchFeature = ITouchFeature.getService();
+        } catch (RemoteException e) {
+            // Do nothing
+        } catch (NoSuchElementException e) {
+            // Do nothing
+        }
+
     }
 
     public static void startService(Context context) {
-        context.startServiceAsUser(new Intent(context, ThermalService.class),
-                UserHandle.CURRENT);
+        if (FileUtils.fileExists(THERMAL_SCONFIG)) {
+            context.startServiceAsUser(new Intent(context, ThermalService.class),
+                    UserHandle.CURRENT);
+        }
     }
 
     private void writeValue(String profiles) {
@@ -77,9 +98,14 @@ public final class ThermalUtils {
     private String getValue() {
         String value = mSharedPrefs.getString(THERMAL_CONTROL, null);
 
+        if (value != null) {
+             String[] modes = value.split(":");
+             if (modes.length < 5) value = null;
+         }
+
         if (value == null || value.isEmpty()) {
-            value = THERMAL_BENCHMARK + ":" + THERMAL_CAMERA + ":" +
-                    THERMAL_DIALER + ":" + THERMAL_GAMING;
+            value = THERMAL_BENCHMARK + ":" + THERMAL_BROWSER + ":" + THERMAL_CAMERA + ":" +
+                    THERMAL_DIALER + ":" + THERMAL_GAMING + ":" + THERMAL_STREAMING;
             writeValue(value);
         }
         return value;
@@ -95,18 +121,25 @@ public final class ThermalUtils {
             case STATE_BENCHMARK:
                 modes[0] = modes[0] + packageName + ",";
                 break;
-            case STATE_CAMERA:
+            case STATE_BROWSER:
                 modes[1] = modes[1] + packageName + ",";
                 break;
-            case STATE_DIALER:
+            case STATE_CAMERA:
                 modes[2] = modes[2] + packageName + ",";
                 break;
-            case STATE_GAMING:
+            case STATE_DIALER:
                 modes[3] = modes[3] + packageName + ",";
+                break;
+            case STATE_GAMING:
+                modes[4] = modes[4] + packageName + ",";
+                break;
+            case STATE_STREAMING:
+                modes[5] = modes[5] + packageName + ",";
                 break;
         }
 
-        finalString = modes[0] + ":" + modes[1] + ":" + modes[2] + ":" + modes[3];
+        finalString = modes[0] + ":" + modes[1] + ":" + modes[2] + ":" + modes[3] + ":" +
+                modes[4] + ":" + modes[5];
 
         writeValue(finalString);
     }
@@ -118,11 +151,15 @@ public final class ThermalUtils {
         if (modes[0].contains(packageName + ",")) {
             state = STATE_BENCHMARK;
         } else if (modes[1].contains(packageName + ",")) {
-            state = STATE_CAMERA;
+            state = STATE_BROWSER;
         } else if (modes[2].contains(packageName + ",")) {
-            state = STATE_DIALER;
+            state = STATE_CAMERA;
         } else if (modes[3].contains(packageName + ",")) {
+            state = STATE_DIALER;
+        } else if (modes[4].contains(packageName + ",")) {
             state = STATE_GAMING;
+        } else if (modes[5].contains(packageName + ",")) {
+            state = STATE_STREAMING;
         }
 
         return state;
@@ -143,14 +180,21 @@ public final class ThermalUtils {
             if (modes[0].contains(packageName + ",")) {
                 state = THERMAL_STATE_BENCHMARK;
             } else if (modes[1].contains(packageName + ",")) {
-                state = THERMAL_STATE_CAMERA;
+                state = THERMAL_STATE_BROWSER;
             } else if (modes[2].contains(packageName + ",")) {
-                state = THERMAL_STATE_DIALER;
+                state = THERMAL_STATE_CAMERA;
             } else if (modes[3].contains(packageName + ",")) {
+                state = THERMAL_STATE_DIALER;
+            } else if (modes[4].contains(packageName + ",")) {
                 state = THERMAL_STATE_GAMING;
+            } else if (modes[5].contains(packageName + ",")) {
+                state = THERMAL_STATE_STREAMING;
             }
         }
-        FileUtils.writeLine(THERMAL_SCONFIG, state);
+
+        if (!isInGameMode()) {
+            FileUtils.writeLine(THERMAL_SCONFIG, state);
+        }
 
         if (state == THERMAL_STATE_BENCHMARK || state == THERMAL_STATE_GAMING) {
             updateTouchModes(packageName);
@@ -168,17 +212,24 @@ public final class ThermalUtils {
         }
 
         String[] value = values.split(",");
-        String gameMode = value[Constants.TOUCH_GAME_MODE];
-        String touchResponse = value[Constants.TOUCH_RESPONSE];
-        String touchSensitivity = value[Constants.TOUCH_SENSITIVITY];
-        String touchResistant = value[Constants.TOUCH_RESISTANT];
-
-        FileUtils.writeLine(Constants.FILE_TOUCH_TOLERANCE, touchSensitivity);
-        FileUtils.writeLine(Constants.FILE_TOUCH_UP_THRESHOLD, touchResponse);
-        FileUtils.writeLine(Constants.FILE_TOUCH_EDGE_FILTER, touchResistant);
-        SystemProperties.set(Constants.PROP_TOUCH_GAME_MODE, gameMode);
+        int gameMode = Integer.parseInt(value[Constants.TOUCH_GAME_MODE]);
+        int touchResponse = Integer.parseInt(value[Constants.TOUCH_RESPONSE]);
+        int touchSensitivity = Integer.parseInt(value[Constants.TOUCH_SENSITIVITY]);
+        int touchResistant = Integer.parseInt(value[Constants.TOUCH_RESISTANT]);
+        int touchActiveMode = (touchResponse != 0 && touchSensitivity != 0 && touchResistant != 0)
+                ? 1 : 0;
+        try {
+            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_TOLERANCE, touchSensitivity);
+            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD, touchResponse);
+            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_EDGE_FILTER, touchResistant);
+            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_GAME_MODE, gameMode);
+            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_ACTIVE_MODE, touchActiveMode);
+        } catch (RemoteException e) {
+            // Do nothing
+        }
 
         mTouchModeChanged = true;
+        updateTouchRotation();
     }
 
     protected void resetTouchModes() {
@@ -186,11 +237,49 @@ public final class ThermalUtils {
             return;
         }
 
-        FileUtils.writeLine(Constants.FILE_TOUCH_TOLERANCE, Constants.DEFAULT_TOUCH_TOLERANCE);
-        FileUtils.writeLine(Constants.FILE_TOUCH_UP_THRESHOLD, Constants.DEFAULT_TOUCH_UP_THRESHOLD);
-        FileUtils.writeLine(Constants.FILE_TOUCH_EDGE_FILTER, Constants.DEFAULT_TOUCH_EDGE_FILTER);
-        SystemProperties.set(Constants.PROP_TOUCH_GAME_MODE, "0");
+        try {
+            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_GAME_MODE);
+            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_ACTIVE_MODE);
+            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_UP_THRESHOLD);
+            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_TOLERANCE);
+            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_EDGE_FILTER);
+            mTouchFeature.resetTouchMode(Constants.MODE_TOUCH_ROTATION);
+        } catch (RemoteException e) {
+            // Do nothing
+        }
 
         mTouchModeChanged = false;
+    }
+
+    protected void updateTouchRotation() {
+        if (!mTouchModeChanged) {
+            return;
+        }
+
+        int touchRotation = 0;
+        switch (mDisplay.getRotation()) {
+            case Surface.ROTATION_0:
+                touchRotation = 0;
+                break;
+            case Surface.ROTATION_90:
+                touchRotation = 1;
+                break;
+            case Surface.ROTATION_180:
+                touchRotation = 2;
+                break;
+            case Surface.ROTATION_270:
+                touchRotation = 3;
+                break;
+        }
+
+        try {
+            mTouchFeature.setTouchMode(Constants.MODE_TOUCH_ROTATION, touchRotation);
+        } catch (RemoteException e) {
+            // Do nothing
+        }
+    }
+
+    private boolean isInGameMode() {
+        return SystemProperties.getInt(PROP_GAME_MODE, -1) > 0;
     }
 }
