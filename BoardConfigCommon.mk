@@ -110,7 +110,6 @@ TARGET_KERNEL_CLANG_VERSION = proton
 TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-$(TARGET_KERNEL_CLANG_VERSION)
 TARGET_KERNEL_ADDITIONAL_FLAGS += AR=llvm-ar NM=llvm-nm OBJCOPY=llvm-objcopy OBJDUMP=llvm-objdump STRIP=llvm-strip
 SELINUX_IGNORE_NEVERALLOWS := true
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # Partitions
 ifeq ($(PRODUCT_VIRTUAL_AB_OTA),true)
