@@ -9,8 +9,6 @@ camera.disable_zsl_mode=true
 # Charger
 ro.charger.disable_init_blank=true
 
-# Dalvik
-dalvik.vm.heapsize=36m
 
 # Display
 debug.gralloc.gfx_ubwc_disable=0
