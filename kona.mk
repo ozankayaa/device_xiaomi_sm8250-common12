@@ -268,17 +268,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
-<<<<<<< HEAD
-=======
-# Speed up
-PRODUCT_DEXPREOPT_SPEED_APPS += \
-    Launcher3QuickStep \
-    Settings \
-    SystemUI \
-    Nexuslauncher \
-    lawnchair
-
->>>>>>> 3a638c2f (sm8250-common add lawnchair & Pixel launcher to Speed preopt Party)
 # Fingerprint
 ifeq ($(TARGET_HAS_FOD),true)
 PRODUCT_PACKAGES += \
