@@ -70,48 +70,9 @@ persist.device_config.runtime_native.usap_pool_enabled=true
 # Pre-Rendering
 ro.vendor.perf.scroll_opt=true
 
-<<<<<<< HEAD
 # ADB debugging
 #ro.secure=1
 #ro.adb.secure=0
 persist.service.adb.enable=1
 persist.service.debuggable=1
 persist.sys.usb.config=mtp,adb
-=======
-# Venom
-ro.surface_flinger.running_without_sync_framework=true
-
-# DHA Tunning
-ro.config.dha_tunnable=1
-
-# Smoothens UI
-persist.service.lgospd.enable=0
-persist.service.pcsync.enable=0
-
-# ZRAM
-ro.zram.mark_idle_delay_mins=60
-ro.zram.first_wb_delay_mins=1440
-ro.zram.periodic_wb_delay_hours=24 
-
-# Notch Overlay
-ro.miui.notch=1
-
-# Disable blur on app launch
-ro.launcher.blur.appLaunch=0
-
-# Better Ram
-ro.config.fha_enable=true
-ro.sys.fw.bg_apps_limit=32
-ro.config.dha_cached_max=16
-ro.config.dha_empty_max=42
-ro.config.dha_empty_init=32
-ro.config.dha_lmk_scale=0.545
-ro.config.dha_th_rate=2.3
-ro.config.sdha_apps_bg_max=64
-ro.config.sdha_apps_bg_min=8
-ro.config.avoid_gfx_accel=true
-
-#Diable Blur 
-ro.surface_flinger.supports_background_blur=0	
-ro.sf.blurs_are_expensive=0
->>>>>>> 9a0412d0 (sm8250-common:Prop: disable blur)
