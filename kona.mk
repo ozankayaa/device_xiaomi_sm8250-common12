@@ -221,6 +221,7 @@ PRODUCT_PACKAGES += \
     libsdedrm \
     libsdmcore \
     libsdmutils \
+		libqdMetaData \
     libqdMetaData.system \
 		libqdMetaData.vendor \
     libsdmcore \
