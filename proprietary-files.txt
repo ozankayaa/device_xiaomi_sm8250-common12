@@ -32,6 +32,7 @@ vendor/lib/soundfx/libshoebox.so
 # ANT+
 system_ext/lib/com.qualcomm.qti.ant@1.0.so
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
+vendor/lib64/hw/com.dsi.ant@1.0-impl.so|965fce4107bcf6f9bc519acc56f96bdf7ec965c7
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
