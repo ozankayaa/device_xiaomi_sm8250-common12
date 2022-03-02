@@ -44,9 +44,6 @@
     <string name="touch_resistant_title">Resistant area</string>
     <string name="touch_resistant_summary">Reduce touch sensitivity near the edges to avoid triggering touch controls</string>
 
-    <!-- Refresh Rate tile -->
-    <string name="refresh_rate_tile_title">Refresh Rate</string>
-
     <!-- Thermal Profiles tile -->
     <string name="thermal_tile_title">Thermal Profiles</string>
 
@@ -55,7 +52,7 @@
     <string name="refresh_summary">Set the maximum refresh rate for a specific application</string>
     <string name="refresh_default">Default</string>
     <string name="refresh_standard">Standard (60Hz)</string>
-    <string name="refresh_high">High (90Hz)</string>    
+    <string name="refresh_high">High (90Hz)</string>
     <string name="refresh_higher">Higher (120Hz)</string>
-    <string name="refresh_maximum">Maximum (144Hz)</string>    
+    <string name="refresh_maximum">Maximum (144Hz)</string>
 </resources>
