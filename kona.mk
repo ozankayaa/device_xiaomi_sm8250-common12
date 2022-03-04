@@ -242,6 +242,8 @@ PRODUCT_PACKAGES += \
     libsdmutils \
     libtinyxml \
     libvulkan \
+    gralloc.default \
+    gralloc.kona \
     memtrack.kona \
     vendor.display.config@1.5 \
     vendor.display.config@1.11.vendor \
