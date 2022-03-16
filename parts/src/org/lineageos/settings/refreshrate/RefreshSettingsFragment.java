@@ -418,7 +418,7 @@ public class RefreshSettingsFragment extends PreferenceFragment
              * To get from that number to the expected value of 1 we need to negate
              * and subtract 2.
              */
-            return index >= 0 ? index : -index - 2;
+            return index >= 0 ? index : -index - 1;
         }
 
         @Override
