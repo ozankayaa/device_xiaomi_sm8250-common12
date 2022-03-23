@@ -162,9 +162,8 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    audio.bluetooth.default
-
-PRODUCT_PACKAGES += \
+        audio.bluetooth.default \
+				 android.hardware.bluetooth@1.1.vendor \
 		    android.hardware.bluetooth@1.0.vendor \
 		    android.hardware.bluetooth.audio@2.0-impl \
 		    com.dsi.ant@1.0.vendor \
@@ -222,6 +221,7 @@ PRODUCT_PACKAGES += \
     libsdmcore \
     libsdmutils \
     libqdMetaData.system \
+		libqdMetaData.vendor \
     libsdmcore \
     libsdmutils \
     libtinyxml \
