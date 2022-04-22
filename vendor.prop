@@ -156,7 +156,7 @@ dalvik.vm.image-dex2oat-threads=8
 dalvik.vm.dex2oat-filter=speed
 dalvik.vm.dex2oat-threads=8
 dalvik.vm.dex2oat64.enabled=true
-	
+
 # Display
 ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
 ro.surface_flinger.max_frame_buffer_acquired_buffers=3
@@ -304,3 +304,7 @@ wifi.aware.interface=wifi-aware0
 # IORap
 iorapd.perfetto.enable=true
 iorapd.readahead.enable=true
+
+# Hwui
+debug.hwui.use_hint_manager=true
+debug.hwui.target_cpu_time_percent=30
