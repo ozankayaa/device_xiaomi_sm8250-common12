@@ -88,3 +88,6 @@ persist.service.pcsync.enable=0
 
 # IORap
 ro.iorapd.enable=true
+
+# Use Vulkan backend for Skia UI rendering
+debug.hwui.renderer=skiavk
