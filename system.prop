@@ -83,3 +83,6 @@ ro.launcher.blur.appLaunch=0
 # Smoothens UI
 persist.service.lgospd.enable=0
 persist.service.pcsync.enable=0
+
+# IORap
+ro.iorapd.enable=true
