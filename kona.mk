@@ -271,6 +271,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+# Speed up
+PRODUCT_DEXPREOPT_SPEED_APPS += \
+		    Launcher3QuickStep \
+		    Settings \
+		    SystemUI \
+		    Nexuslauncher \
+		    lawnchair \
+				Launcher3
+
 # Fingerprint
 ifeq ($(TARGET_HAS_FOD),true)
 PRODUCT_PACKAGES += \
