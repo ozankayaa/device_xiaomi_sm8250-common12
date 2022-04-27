@@ -101,3 +101,6 @@ ro.am.reschedule_service=true
 ro.sys.fw.bg_apps_limit=32
 ro.config.dha_cached_max=16
 ro.config.dha_empty_max=42
+
+# Disable Remote Keygaurd animation
+persist.wm.enable_remote_keyguard_animation=0
