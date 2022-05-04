@@ -170,12 +170,16 @@ on boot
     # Touch Sampling Rate
     chown system system /sys/devices/virtual/touch/touch_dev/bump_sample_rate
     chmod 0664 /sys/devices/virtual/touch/touch_dev/bump_sample_rate
-    
+
     # FPS Info
     chown system graphics /sys/devices/virtual/graphics/fb0/measured_fps
     chmod 0666 /sys/devices/virtual/graphics/fb0/measured_fps
     chown system graphics /sys/class/graphics/fb0/measured_fps
     chmod 0666 /sys/class/graphics/fb0/measured_fps
+
+    # HTSR
+    chown system system /sys/devices/virtual/touch/touch_dev/bump_sample_rate
+    chmod 0666 /sys/devices/virtual/touch/touch_dev/bump_sample_rate
 
 on property:vendor.display.lcd_density=560
    setprop dalvik.vm.heapgrowthlimit 256m
