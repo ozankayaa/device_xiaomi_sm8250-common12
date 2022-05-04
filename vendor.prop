@@ -177,6 +177,7 @@ vendor.display.qdcm.mode_combine=1
 vendor.display.use_layer_ext=0
 vendor.display.use_smooth_motion=0
 
+
 #hwui properties
 ro.hwui.texture_cache_size=72
 ro.hwui.layer_cache_size=48
@@ -193,6 +194,11 @@ ro.hwui.text_large_cache_height=1024
 debug.sf.disable_client_composition_cache=1
 ro.config.avoid_gfx_accel=true
 debug.sf.layer_caching_active_layer_timeout_ms=1000
+
+# Blur
+ro.surface_flinger.supports_background_blur=1
+ro.sf.blurs_are_expensive=1
+
 
 # DRM
 drm.service.enabled=true
