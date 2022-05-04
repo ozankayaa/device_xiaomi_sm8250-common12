@@ -10,7 +10,7 @@ tunnel.audio.encode=true
 
 # Camera
 camera.disable_zsl_mode=true
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.pixelexperience.faceunlock,org.lineageos.snap,com.motorola.faceunlock
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.pixelexperience.faceunlock,org.lineageos.snap
 persist.vendor.camera.eis.enable=1
 persist.camera.facepp.fdenable=0
 
@@ -102,8 +102,6 @@ persist.service.pcsync.enable=0
 # IORap
 ro.iorapd.enable=true
 
-# Use Vulkan backend for Skia UI rendering
-debug.hwui.renderer=skiavk
 
 # Better Ram
 ro.config.fha_enable=true

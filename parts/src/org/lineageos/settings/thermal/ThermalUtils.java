@@ -36,7 +36,7 @@ import vendor.xiaomi.hardware.touchfeature.V1_0.ITouchFeature;
 
 public final class ThermalUtils {
 
-    protected static final int STATE_DEFAULT = 10;
+    protected static final int STATE_DEFAULT = 0;
     protected static final int STATE_BENCHMARK = 1;
     protected static final int STATE_BROWSER = 2;
     protected static final int STATE_CAMERA = 3;
@@ -44,7 +44,7 @@ public final class ThermalUtils {
     protected static final int STATE_GAMING = 5;
     protected static final int STATE_STREAMING = 6;
     private static final String THERMAL_CONTROL = "thermal_control";
-    private static final String THERMAL_STATE_DEFAULT = "0";
+    private static final String THERMAL_STATE_DEFAULT = "10";
     private static final String THERMAL_STATE_BENCHMARK = "10";
     private static final String THERMAL_STATE_BROWSER = "11";
     private static final String THERMAL_STATE_CAMERA = "12";
