@@ -36,7 +36,7 @@ import vendor.xiaomi.hardware.touchfeature.V1_0.ITouchFeature;
 
 public final class ThermalUtils {
 
-    protected static final int STATE_DEFAULT = 0;
+    protected static final int STATE_DEFAULT = 10;
     protected static final int STATE_BENCHMARK = 1;
     protected static final int STATE_BROWSER = 2;
     protected static final int STATE_CAMERA = 3;
