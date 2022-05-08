@@ -9,5 +9,11 @@
     "repository":  "ThankYouMario/proprietary_vendor_qcom_common",
     "target_path": "vendor/qcom/common",
     "branch": "sapphire"
+  },
+  {
+     "remote": "github",
+     "repository": "LineageOS/android_hardware_xiaomi",
+     "target_path": "hardware/xiaomi/",
+     "branch": "lineage-19.1"
   }
 ]
