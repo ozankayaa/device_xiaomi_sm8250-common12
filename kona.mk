@@ -377,9 +377,28 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.perf@2.2.vendor
 
-# Preopt SystemUI
+# ART
+# Optimize for speed dexopt
 PRODUCT_DEXPREOPT_SPEED_APPS += \
-    SystemUI
+        Settings \
+		    Phonesky \
+				Launcher3QuickStep \
+				SystemUI \
+				Nexuslauncher \
+				lawnchair \
+				Launcher3 \
+		    GoogleServicesFramework
+
+# Don't build debug for host or device
+ART_BUILD_TARGET_NDEBUG := true
+ART_BUILD_TARGET_DEBUG := false
+ART_BUILD_HOST_NDEBUG := true
+ART_BUILD_HOST_DEBUG := false
+
+
+# Recommend using the non debug dexpreopter
+USE_DEX2OAT_DEBUG := false
+
 
 # Power
 PRODUCT_PACKAGES += \
