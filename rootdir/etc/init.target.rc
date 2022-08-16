@@ -175,7 +175,7 @@ on boot
     # Touch Sampling Rate
     chown system system /sys/devices/virtual/touch/touch_dev/bump_sample_rate
     chmod 0664 /sys/devices/virtual/touch/touch_dev/bump_sample_rate
-    
+
     # Fingerprint
 on init
     chmod 0664 /dev/fortsense_fp
@@ -255,7 +255,7 @@ service vendor.lowi /vendor/bin/sscrpcd
    class core
    user system
    group system wakelock
-   capabilities BLOCK_SUSPEND
+   disabled
 
 #pd-mapper
 service vendor.pd_mapper /vendor/bin/pd-mapper
