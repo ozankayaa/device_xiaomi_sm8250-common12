@@ -2,6 +2,8 @@
 persist.audio.button_jack.profile=volume
 persist.audio.button_jack.switch=0
 tunnel.audio.encode=true
+audio.offload.buffer.size.kb=32
+audio.offload.gapless.enabled=true
 
 # Bluetooth
 ro.bluetooth.library_name=libbluetooth_qti.so
@@ -41,6 +43,7 @@ ro.com.google.ime.kb_pad_port_b=1
 debug.hwui.renderer=skiagl
 debug.renderengine.backend=skiaglthreaded
 renderthread.skia.reduceopstasksplitting=true
+persist.demo.hdmirotationlock=false
 
 # IMS
 persist.dbg.volte_avail_ovr=1
@@ -66,6 +69,7 @@ ro.vendor.qti.core_ctl_min_cpu=2
 
 # Radio
 ro.telephony.default_network=33,22
+rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 
 # Netmgr
 persist.vendor.data.iwlan.enable=true
