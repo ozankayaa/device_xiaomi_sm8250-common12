@@ -1,12 +1,4 @@
 <compatibility-matrix version="2.0" type="framework">
-  <hal format="hidl" optional="true">
-    <name>android.hardware.bluetooth.audio</name>
-    <version>2.1</version>
-    <interface>
-        <name>IBluetoothAudioProvidersFactory</name>
-        <instance>default</instance>
-    </interface>
-</hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.gnss</name>
         <version>2.0-1</version>
@@ -30,14 +22,6 @@
             <name>ISap</name>
             <instance>slot2</instance>
         </interface>
-        <hal format="hidl" optional="true">
-                <name>com.dsi.ant</name>
-                <version>1.0</version>
-                <interface>
-                    <name>IAnt</name>
-                    <instance>default</instance>
-                </interface>
-            </hal>
     </hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.secure_element</name>
@@ -304,14 +288,6 @@
         <name>IFmHci</name>
         <instance>default</instance>
     </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.fm</name>
-        <version>1.0</version>
-        <interface>
-            <name>IFmHci</name>
-            <instance>default</instance>
-        </interface>
     </hal>
     <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.qccvndhal</name>
