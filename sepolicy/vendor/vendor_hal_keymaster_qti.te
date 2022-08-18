@@ -1,0 +1,1 @@
+allow vendor_hal_keymaster_qti default_prop:file { read };

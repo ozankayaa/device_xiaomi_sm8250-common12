@@ -1,0 +1,1 @@
+allow vendor_ims default_prop:file { read };

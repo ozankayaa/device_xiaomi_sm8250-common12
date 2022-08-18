@@ -1,0 +1,1 @@
+allow vendor_hal_iop_default default_prop:file { read };

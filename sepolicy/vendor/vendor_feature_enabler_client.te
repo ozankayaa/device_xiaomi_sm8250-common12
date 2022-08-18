@@ -1,0 +1,1 @@
+allow vendor_feature_enabler_client default_prop:file { read };

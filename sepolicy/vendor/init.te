@@ -17,3 +17,9 @@ allow init vendor_sysfs_graphics:file rw_file_perms;
 
 allow init system_file:dir { relabelfrom };
 allow init system_file:file { relabelfrom };
+allow init efs_block_device:blk_file { relabelto };
+
+allow init proc_last_kmsg:file r_file_perms;
+allow init proc_last_kmsg:file { setattr };
+allow init iorapd_data_file:file getattr;
+allow init hal_fingerprint_default:process { ptrace };

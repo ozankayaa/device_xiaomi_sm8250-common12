@@ -1,0 +1,1 @@
+allow vendor_rfs_access default_prop:file { read };

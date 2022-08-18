@@ -1,0 +1,1 @@
+allow vendor_hal_sensorscalibrate_qti_default default_prop:file { read };

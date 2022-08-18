@@ -1,0 +1,1 @@
+allow vendor_rmt_storage default_prop:file { read };

@@ -1,2 +1,10 @@
 # Allow hal_bluetooth_default to read files in vendor_wifi_vendor_data_file
 r_dir_file(hal_bluetooth_default, vendor_wifi_vendor_data_file)
+allow hal_bluetooth_default default_prop:file { read };
+
+# Allow hal_bluetooth_default to read, write, open, create, append, search, add names, and get attributes in vendor_bt_data_file
+allow hal_bluetooth_default vendor_bt_data_file:dir { add_name search write };
+allow hal_bluetooth_default vendor_bt_data_file:file { append getattr create open read write };
+
+# Allow hal_bluetooth_default to read, write, open, get attributes, and control IO in vendor_diag_device
+allow hal_bluetooth_default vendor_diag_device:chr_file { ioctl getattr open read write };

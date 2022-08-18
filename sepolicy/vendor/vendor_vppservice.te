@@ -1,0 +1,1 @@
+allow vendor_vppservice default_prop:file { read  open };

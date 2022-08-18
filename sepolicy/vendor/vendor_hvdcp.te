@@ -1,0 +1,1 @@
+allow vendor_hvdcp default_prop:file { read };

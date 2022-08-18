@@ -1,0 +1,1 @@
+allow vendor_qmipriod default_prop:file { read };

@@ -1,0 +1,4 @@
+allow vendor_adpl default_prop:file { read };
+
+# Allow vendor_adpl to read, write, open, and control IO in vendor_diag_device
+allow vendor_adpl vendor_diag_device:chr_file { open ioctl read write };

@@ -1,0 +1,1 @@
+allow vendor_dspservice default_prop:file { read };

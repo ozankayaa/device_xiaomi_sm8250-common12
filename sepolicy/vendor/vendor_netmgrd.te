@@ -1,0 +1,1 @@
+allow vendor_netmgrd default_prop:file { read };

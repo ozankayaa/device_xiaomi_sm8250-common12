@@ -45,3 +45,6 @@ allow hal_fingerprint_default vendor_sysfs_spss:file { open read };
 
 # Allow binder communication with vendor_hal_perf_default
 binder_call(hal_fingerprint_default, vendor_hal_perf_default)
+
+allow hal_fingerprint_default default_android_hwservice:hwservice_manager { find };
+allow hal_fingerprint_default default_prop:file { read };

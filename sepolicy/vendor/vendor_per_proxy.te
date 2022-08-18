@@ -1,0 +1,1 @@
+allow vendor_per_proxy default_prop:file { read };

@@ -1,0 +1,1 @@
+allow vendor_hal_dpmQmiMgr default_prop:file { read };

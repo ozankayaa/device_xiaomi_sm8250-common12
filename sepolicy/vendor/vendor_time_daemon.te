@@ -1,0 +1,1 @@
+allow vendor_time_daemon default_prop:file { read };

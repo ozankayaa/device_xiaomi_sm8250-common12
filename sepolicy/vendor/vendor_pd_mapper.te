@@ -1,0 +1,1 @@
+allow vendor_pd_mapper default_prop:file { read };

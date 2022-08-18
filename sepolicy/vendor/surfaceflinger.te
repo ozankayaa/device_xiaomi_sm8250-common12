@@ -1,0 +1,12 @@
+allow kernel vendor_firmware_file:dir search;
+allow kernel vendor_firmware_file:file r_file_perms;
+allow kernel vendor_firmware_file:lnk_file read;
+allow kernel vendor_file:file r_file_perms;
+allow surfaceflinger vendor_firmware_file:dir { search };
+allow surfaceflinger bootanim:dir r_dir_perms;
+
+
+allow surfaceflinger sysfs_msm_subsys:dir { search };
+allow surfaceflinger device:chr_file { getattr ioctl lock map watch watch_reads };
+allow surfaceflinger firmware_file:dir r_dir_perms;
+allow surfaceflinger hal_graphics_composer_default:dir search;

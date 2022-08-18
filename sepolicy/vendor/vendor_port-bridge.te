@@ -1,0 +1,1 @@
+allow vendor_port-bridge default_prop:file { read };

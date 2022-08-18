@@ -1,0 +1,1 @@
+allow vendor_hal_tui_comm_qti default_prop:file { read };

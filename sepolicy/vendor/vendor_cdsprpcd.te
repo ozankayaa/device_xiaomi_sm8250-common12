@@ -1,0 +1,1 @@
+allow vendor_cdsprpcd default_prop:file { read };
