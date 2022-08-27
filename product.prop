@@ -2,9 +2,6 @@
 # memory management [2]
 persist.sys.fw.bg_apps_limit=128
 
-# Adapted LMKD [1]
-# kill_heaviest_task_dup
-ro.lmk.kill_heaviest_task=true
 # use_new_strategy_dup
 ro.lmk.use_new_strategy=true
 # CLO lmkd [1] - others were not defined (will use default values from lmkd binary)
