@@ -1,16 +1,3 @@
-# [1] https://dumps.tadiphone.dev/dumps/oneplus/oneplus9r/-/blob/qssi-user-12-RKQ1.211119.001-R.202207300316-release-keys--IN/vendor/etc/perf/perfconfigstore.xml
-# memory management [2]
-persist.sys.fw.bg_apps_limit=128
-
-# use_new_strategy_dup
-ro.lmk.use_new_strategy=true
-# CLO lmkd [1] - others were not defined (will use default values from lmkd binary)
-ro.lmk.enable_watermark_check=true
-ro.lmk.enable_userspace_lmk=true
-ro.lmk.super_critical=701
-ro.lmk.direct_reclaim_pressure=45
-ro.lmk.reclaim_scan_threshold=0
-persist.sys.perf.topAppRenderThreadBoost.enable=false
-
-# Service reschedule
-persist.sys.am.reschedule_service=true
+# LMKD
+ro.config.low_ram=false
+ro.lmk.log_stats=true
