@@ -3,3 +3,4 @@ allow zygote exported_camera_prop:file { getattr open read };
 allow zygote self:capability { kill };
 allow zygote vendor_file:file { execute getattr open read };
 allow zygote adsprpcd_file:dir { search };
+allow zygote adsprpcd_file:dir r_dir_perms;
