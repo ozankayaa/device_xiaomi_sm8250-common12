@@ -460,4 +460,8 @@
         <transport>hwbinder</transport>
         <fqname>@1.0::ITouchFeature/default</fqname>
     </hal>
+    <interface>
+            <name>ISensorManager</name>
+            <instance>default</instance>
+        </interface>
 </manifest>
